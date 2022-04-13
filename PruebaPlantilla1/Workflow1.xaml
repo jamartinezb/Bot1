@@ -1,0 +1,1214 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="PruebaPlantilla1.Workflow1" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="PruebaPlantilla1.Workflow1_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:local="clr-namespace:Selenium"
+ xmlns:local1="clr-namespace:Excel_NoOffice"
+ xmlns:local2="clr-namespace:AutoIt"
+ xmlns:local3="clr-namespace:Mail_SMTP"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:os="clr-namespace:OpenQA.Selenium;assembly=WebDriver"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>OpenQA.Selenium</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>AutoItX3.Assembly</AssemblyReference>
+      <AssemblyReference>BouncyCastle.Crypto</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>ICSharpCode.SharpZipLib</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>NPOI.OOXML</AssemblyReference>
+      <AssemblyReference>NPOI.OpenXml4Net</AssemblyReference>
+      <AssemblyReference>NPOI.OpenXmlFormats</AssemblyReference>
+      <AssemblyReference>OpenXmlPowerTools</AssemblyReference>
+      <AssemblyReference>Renci.SshNet</AssemblyReference>
+      <AssemblyReference>RestSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Design</AssemblyReference>
+      <AssemblyReference>System.IO</AssemblyReference>
+      <AssemblyReference>System.IO.Compression</AssemblyReference>
+      <AssemblyReference>System.IO.Compression.FileSystem</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Tesseract</AssemblyReference>
+      <AssemblyReference>UIAutomationClient</AssemblyReference>
+      <AssemblyReference>WebDriver</AssemblyReference>
+      <AssemblyReference>WebDriver.Support</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>WinSCPnet</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PruebaPlantilla1</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine.InitialState>
+      <State x:Name="__ReferenceID0" DisplayName="Prueba1" sap2010:WorkflowViewState.IdRef="State_1">
+        <State.Entry>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <local:CreateBrowser Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_1" Navegador="Google_Chrome">
+              <local:CreateBrowser.SeleniumBrowser>
+                <OutArgument x:TypeArguments="os:IWebDriver">
+                  <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+                </OutArgument>
+              </local:CreateBrowser.SeleniumBrowser>
+            </local:CreateBrowser>
+            <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_1" OpenNewTab="False" URL="https://www.mercadolibre.com.co/">
+              <local:NavigateTo.SeleniumBrowser>
+                <InArgument x:TypeArguments="os:IWebDriver">
+                  <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                </InArgument>
+              </local:NavigateTo.SeleniumBrowser>
+            </local:NavigateTo>
+            <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_14" query="document.getElementsByClassName('nav-search-input')[0].value='xbox'">
+              <local:SendQuery.SeleniumBrowser>
+                <InArgument x:TypeArguments="os:IWebDriver">
+                  <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                </InArgument>
+              </local:SendQuery.SeleniumBrowser>
+            </local:SendQuery>
+            <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_15" query="document.getElementsByClassName('nav-search-btn')[0].click();">
+              <local:SendQuery.SeleniumBrowser>
+                <InArgument x:TypeArguments="os:IWebDriver">
+                  <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                </InArgument>
+              </local:SendQuery.SeleniumBrowser>
+            </local:SendQuery>
+          </Sequence>
+        </State.Entry>
+        <State.Transitions>
+          <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_4">
+            <Transition.To>
+              <State x:Name="__ReferenceID1" DisplayName="FinalState" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True" />
+            </Transition.To>
+          </Transition>
+        </State.Transitions>
+      </State>
+    </StateMachine.InitialState>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <State DisplayName="Login click" sap2010:WorkflowViewState.IdRef="State_3">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_2" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_2" OpenNewTab="False" URL="https://the-internet.herokuapp.com/login">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_2" />
+          <local:ClickById Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="ClickById us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="ClickById_1" ItemId="username" TimeoutMS="30000">
+            <local:ClickById.SeleniumBrowser>
+              <InArgument x:TypeArguments="x:Object">
+                <mca:CSharpValue x:TypeArguments="x:Object">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:ClickById.SeleniumBrowser>
+          </local:ClickById>
+          <local:TypeInto Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="TypeInto us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="TypeInto_1" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl id='username'/&gt;" Text="tomsmith" TimeoutMS="30000">
+            <local:TypeInto.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:TypeInto.SeleniumBrowser>
+          </local:TypeInto>
+          <local:ClickById Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="ClickById pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="ClickById_2" ItemId="password" TimeoutMS="30000">
+            <local:ClickById.SeleniumBrowser>
+              <InArgument x:TypeArguments="x:Object">
+                <mca:CSharpValue x:TypeArguments="x:Object">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:ClickById.SeleniumBrowser>
+          </local:ClickById>
+          <local:TypeInto Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="TypeInto pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl id='password'/&gt;" Text="SuperSecretPassword!" TimeoutMS="30000">
+            <local:TypeInto.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:TypeInto.SeleniumBrowser>
+          </local:TypeInto>
+          <local:Click Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="Click_1" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl class='radius'/&gt;" TimeoutMS="30000">
+            <local:Click.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:Click.SeleniumBrowser>
+          </local:Click>
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State sap2010:Annotation.AnnotationText="video #5" DisplayName="Login query" sap2010:WorkflowViewState.IdRef="State_4">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_3" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_3" OpenNewTab="False" URL="https://the-internet.herokuapp.com/login">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_3" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_1" query="document.getElementById('username').value = 'tomsmith';">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_2" query="document.getElementById('password').value = 'SuperSecretPassword!';">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="Click" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_3" query="document.getElementsByClassName('radius')[0].click();">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State sap2010:Annotation.AnnotationText="video #6" DisplayName="Login getresult" sap2010:WorkflowViewState.IdRef="State_5">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_4" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_4" OpenNewTab="False" URL="https://the-internet.herokuapp.com/dropdown">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_4" />
+          <local:GetResultQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="GetResultQuery_1" TimeoutMS="30000" query="document.getElementById('dropdown').value=1; return document.getElementById('dropdown').options[document.getElementById('dropdown').selectedIndex].text;">
+            <local:GetResultQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:GetResultQuery.SeleniumBrowser>
+            <local:GetResultQuery.Text>
+              <OutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String">vResultado</mca:CSharpReference>
+              </OutArgument>
+            </local:GetResultQuery.Text>
+          </local:GetResultQuery>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1">
+            <InArgument x:TypeArguments="x:String">
+              <mca:CSharpValue x:TypeArguments="x:String">"se selecciono laopcion"+vResultado</mca:CSharpValue>
+            </InArgument>
+          </WriteLine>
+        </Sequence>
+      </State.Entry>
+      <State.Variables>
+        <Variable x:TypeArguments="x:String" Name="vResultado">
+          <Variable.Default>
+            <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+          </Variable.Default>
+        </Variable>
+      </State.Variables>
+    </State>
+    <State sap2010:Annotation.AnnotationText="video #6" DisplayName="Login por texto" sap2010:WorkflowViewState.IdRef="State_6">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_5" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_5" OpenNewTab="False" URL="https://the-internet.herokuapp.com/dropdown">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_5" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_4">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+            <local:SendQuery.query>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"for (var i = 0, j = document.getElementById('dropdown').options.length; i &lt; j; ++i){" +
+                "if (document.getElementById('dropdown').options[i].innerHTML == 'Option 2') {" +
+                "document.getElementById('dropdown').selectedIndex = i; " +
+                "break;" +
+                "}" +
+                "}"</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.query>
+          </local:SendQuery>
+          <local:CloseBrowsser Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CloseBrowsser_2">
+            <local:CloseBrowsser.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:CloseBrowsser.SeleniumBrowser>
+          </local:CloseBrowsser>
+        </Sequence>
+      </State.Entry>
+      <State.Variables>
+        <Variable x:TypeArguments="x:String" Name="vResultado">
+          <Variable.Default>
+            <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+          </Variable.Default>
+        </Variable>
+      </State.Variables>
+    </State>
+    <State sap2010:Annotation.AnnotationText="video #6" DisplayName="CheckBox" sap2010:WorkflowViewState.IdRef="State_7">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_6" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_6" OpenNewTab="False" URL="https://the-internet.herokuapp.com/checkboxes">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_6" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_5" query="document.getElementById('checkboxes')[0].checked = true;document.getElementById('checkboxes')[1].checked = false;">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_7" />
+        </Sequence>
+      </State.Entry>
+      <State.Variables>
+        <Variable x:TypeArguments="x:String" Name="vResultado">
+          <Variable.Default>
+            <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+          </Variable.Default>
+        </Variable>
+      </State.Variables>
+    </State>
+    <State DisplayName="Login click" sap2010:WorkflowViewState.IdRef="State_9">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_8" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_8" OpenNewTab="False" URL="https://the-internet.herokuapp.com/login">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_9" />
+          <local:ClickById Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="ClickById us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="ClickById_3" ItemId="username" TimeoutMS="30000">
+            <local:ClickById.SeleniumBrowser>
+              <InArgument x:TypeArguments="x:Object">
+                <mca:CSharpValue x:TypeArguments="x:Object">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:ClickById.SeleniumBrowser>
+          </local:ClickById>
+          <local:TypeInto Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="TypeInto us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="TypeInto_3" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl id='username'/&gt;" Text="tomsmith" TimeoutMS="30000">
+            <local:TypeInto.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:TypeInto.SeleniumBrowser>
+          </local:TypeInto>
+          <local:ClickById Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="ClickById pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="ClickById_4" ItemId="password" TimeoutMS="30000">
+            <local:ClickById.SeleniumBrowser>
+              <InArgument x:TypeArguments="x:Object">
+                <mca:CSharpValue x:TypeArguments="x:Object">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:ClickById.SeleniumBrowser>
+          </local:ClickById>
+          <local:TypeInto Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="TypeInto pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="TypeInto_4" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl id='password'/&gt;" Text="SuperSecretPassword!" TimeoutMS="30000">
+            <local:TypeInto.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:TypeInto.SeleniumBrowser>
+          </local:TypeInto>
+          <local:Click Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="Click_2" InjectJS="False" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl class='radius'/&gt;" TimeoutMS="30000">
+            <local:Click.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:Click.SeleniumBrowser>
+          </local:Click>
+          <Delay Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_10" />
+          <local:ElementExist Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="ElementExist_1" InjectJS="True" Selector="&lt;html app='chrome.exe title='The Internet'/&gt;&lt;webctrl class='flash success'/&gt;" TimeoutMS="30000">
+            <local:ElementExist.Exist>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <mca:CSharpReference x:TypeArguments="x:Boolean">boolExiste</mca:CSharpReference>
+              </OutArgument>
+            </local:ElementExist.Exist>
+            <local:ElementExist.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:ElementExist.SeleniumBrowser>
+          </local:ElementExist>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2">
+            <InArgument x:TypeArguments="x:String">
+              <mca:CSharpValue x:TypeArguments="x:String">"elemento encontrado"+ boolExiste.ToString()</mca:CSharpValue>
+            </InArgument>
+          </WriteLine>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_11" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_6" query="document.getElementsByClassName('button secondary radius')[0].click();">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State DisplayName="Edicion excel" sap2010:WorkflowViewState.IdRef="State_10">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <local1:ReadRange DataTable="{x:Null}" Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" Headers="True" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:C4" SheetName="Ejemplo1">
+            <local1:ReadRange.WorkbookPath>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">@"C:\Users\Jhon MB\Desktop\Ejercicios.xlsx"</mca:CSharpValue>
+              </InArgument>
+            </local1:ReadRange.WorkbookPath>
+          </local1:ReadRange>
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_9" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <ForEach x:TypeArguments="sd:DataRow" DisplayName="ForEach&lt;DataRow&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+            <ForEach.Values>
+              <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">
+                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(sd:DataRow)">dtResultado.AsEnumerable()</mca:CSharpValue>
+              </InArgument>
+            </ForEach.Values>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
+              </ActivityAction.Argument>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <If sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">item[1].ToString().Equals("True")</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String">vURL</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">item[1].ToString()</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_9" OpenNewTab="False">
+                        <local:NavigateTo.SeleniumBrowser>
+                          <InArgument x:TypeArguments="os:IWebDriver">
+                            <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                          </InArgument>
+                        </local:NavigateTo.SeleniumBrowser>
+                        <local:NavigateTo.URL>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">vURL</mca:CSharpValue>
+                          </InArgument>
+                        </local:NavigateTo.URL>
+                      </local:NavigateTo>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ForEach>
+          <Delay Duration="00:00:04" sap2010:WorkflowViewState.IdRef="Delay_12" />
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State sap2010:Annotation.AnnotationText="video #5" DisplayName="Login face" sap2010:WorkflowViewState.IdRef="State_11">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" DisplayName="Crear navegador" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_10" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_10" OpenNewTab="False" URL="https://web.whatsapp.com/">
+            <local:NavigateTo.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:NavigateTo.SeleniumBrowser>
+          </local:NavigateTo>
+          <Delay Duration="00:00:06" sap2010:WorkflowViewState.IdRef="Delay_13" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery us" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_8" query="document.getElementsByClassName('inputtext _55r1 _6luy')[0].value = 'jhonpo15 @hotmail.com'">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery pss" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_9" query="document.getElementsByClassName('inputtext _55r1 _6luy _9npi')[0].value = 'Mz2cs41234567890M+';">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="Click ingresar" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_10" query="document.getElementsByClassName('_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy')[0].click();">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_14" />
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="Click buscar" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_11" query="document.getElementsByClassName('s45kfl79 emlxlaya bkmhp75w spb7xbtv i09qtzwb n7fi1qx3 b5wmifdl hzruof5a pmk7jnqg j9ispegn kr520xx4 c5ndavph art1omkt ot9fgl3s rnr61an3')[7].click();">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery nombre" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_12" query="document.getElementsByClassName('oajrlxb2 rq0escxv f1sip0of hidtqoto e70eycc3 lzcic4wl hzawbc8m ijkhr0an aaoq3grb sgqwj88q b3i9ofy5 oo9gr5id b1f16np4 hdh3q7d8 dwo3fsh8 qu0x051f esr5mh6w e9989ue4 r7d6kgcz br7hx15l h2jyy9rg n3ddgdk9 owxd89k7 ihxqhq3m jq4qci2q k4urcfbm iu8raji3 qypqp5cg l60d2q6s hv4rvrfc hwnh5xvq ez2duhqw aj8hi1zk r4fl40cc kd8v7px7 m07ooulj mzan44vs')[0].value = 'Daniel Mendieta';">
+            <local:SendQuery.SeleniumBrowser>
+              <InArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+              </InArgument>
+            </local:SendQuery.SeleniumBrowser>
+          </local:SendQuery>
+          <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_15" />
+          <local2:SendKeys Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendKeys enter" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendKeys_2" Key="ENTER" Selector="&lt;html app='chrome.exe title='Facebook'/&gt;&lt;webctrl clase='oajrlxb2 rq0escxv f1sip0of hidtqoto e70eycc3 lzcic4wl hzawbc8m ijkhr0an aaoq3grb sgqwj88q b3i9ofy5 oo9gr5id b1f16np4 hdh3q7d8 dwo3fsh8 qu0x051f esr5mh6w e9989ue4 r7d6kgcz br7hx15l h2jyy9rg n3ddgdk9 owxd89k7 ihxqhq3m jq4qci2q k4urcfbm iu8raji3 qypqp5cg l60d2q6s hv4rvrfc hwnh5xvq ez2duhqw aj8hi1zk r4fl40cc kd8v7px7 m07ooulj mzan44vs'/&gt;" TimeoutMS="30000" />
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State DisplayName="Edicion excel10" sap2010:WorkflowViewState.IdRef="State_12">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <local1:ReadRange DataTable="{x:Null}" Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" Headers="True" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1:C6" SheetName="Ejemplo1">
+            <local1:ReadRange.WorkbookPath>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">@"C:\Users\Jhon MB\Desktop\prueba extenciones google\RPA\Ejercicios.xlsx"</mca:CSharpValue>
+              </InArgument>
+            </local1:ReadRange.WorkbookPath>
+          </local1:ReadRange>
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_11" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <ForEach x:TypeArguments="sd:DataRow" DisplayName="ForEach&lt;DataRow&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+            <ForEach.Values>
+              <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">
+                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(sd:DataRow)">dtResultado.AsEnumerable()</mca:CSharpValue>
+              </InArgument>
+            </ForEach.Values>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
+              </ActivityAction.Argument>
+              <If sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean">item[2].ToString().Equals("True")</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String">vURL</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String">item[1].ToString()</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <local:NavigateTo Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_11" OpenNewTab="False">
+                      <local:NavigateTo.SeleniumBrowser>
+                        <InArgument x:TypeArguments="os:IWebDriver">
+                          <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                        </InArgument>
+                      </local:NavigateTo.SeleniumBrowser>
+                      <local:NavigateTo.URL>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String">vURL</mca:CSharpValue>
+                        </InArgument>
+                      </local:NavigateTo.URL>
+                    </local:NavigateTo>
+                  </Sequence>
+                </If.Then>
+              </If>
+            </ActivityAction>
+          </ForEach>
+          <Delay Duration="00:00:04" sap2010:WorkflowViewState.IdRef="Delay_16" />
+        </Sequence>
+      </State.Entry>
+    </State>
+    <State DisplayName="Practica excel" sap2010:WorkflowViewState.IdRef="State_13">
+      <State.Entry>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Assign DisplayName="Assign destinatarios" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String">vDestinatarios</mca:CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">System.Configuration.ConfigurationManager.AppSettings["destinatariosEmail"].ToString()</mca:CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign nombre archivo" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <mca:CSharpReference x:TypeArguments="x:String">vNombreArchivo</mca:CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">@"C:\Users\Jhon MB\Desktop\Ejercicios.xlsx"</mca:CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="abrir excel" />
+          <local1:ReadRange Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" Headers="True" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="A1:C4" SheetName="Ejemplo2">
+            <local1:ReadRange.DataTable>
+              <OutArgument x:TypeArguments="sd:DataTable">
+                <mca:CSharpReference x:TypeArguments="sd:DataTable">dtResultado</mca:CSharpReference>
+              </OutArgument>
+            </local1:ReadRange.DataTable>
+            <local1:ReadRange.WorkbookPath>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">vNombreArchivo</mca:CSharpValue>
+              </InArgument>
+            </local1:ReadRange.WorkbookPath>
+          </local1:ReadRange>
+          <local:CreateBrowser Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="CreateBrowser_12" Navegador="Google_Chrome">
+            <local:CreateBrowser.SeleniumBrowser>
+              <OutArgument x:TypeArguments="os:IWebDriver">
+                <mca:CSharpReference x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpReference>
+              </OutArgument>
+            </local:CreateBrowser.SeleniumBrowser>
+          </local:CreateBrowser>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="abrio google" />
+          <ForEach x:TypeArguments="sd:DataRow" DisplayName="ForEach&lt;DataRow&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_7">
+            <ForEach.Values>
+              <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">
+                <mca:CSharpValue x:TypeArguments="scg:IEnumerable(sd:DataRow)">dtResultado.AsEnumerable()</mca:CSharpValue>
+              </InArgument>
+            </ForEach.Values>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
+              </ActivityAction.Argument>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="ingreso al for" />
+                <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">vURL</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">item[1].ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="tomo url" />
+                <local:NavigateTo Result="{x:Null}" What="{x:Null}" DisplayName="NavigateTo Excel" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="NavigateTo_12" OpenNewTab="False">
+                  <local:NavigateTo.SeleniumBrowser>
+                    <InArgument x:TypeArguments="os:IWebDriver">
+                      <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                    </InArgument>
+                  </local:NavigateTo.SeleniumBrowser>
+                  <local:NavigateTo.URL>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">vURL</mca:CSharpValue>
+                    </InArgument>
+                  </local:NavigateTo.URL>
+                </local:NavigateTo>
+                <Assign DisplayName="Assign valor a variable" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">vProducto</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">item[2].ToString()</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <local:SendQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="SendQuery al buscador y click" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="SendQuery_13">
+                  <local:SendQuery.SeleniumBrowser>
+                    <InArgument x:TypeArguments="os:IWebDriver">
+                      <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                    </InArgument>
+                  </local:SendQuery.SeleniumBrowser>
+                  <local:SendQuery.query>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">"document.getElementsByClassName('nav-search-input')[0].value= '"+vProducto+"'; " + "document.getElementsByClassName('nav-search-btn')[0].click();"</mca:CSharpValue>
+                    </InArgument>
+                  </local:SendQuery.query>
+                </local:SendQuery>
+                <local:GetResultQuery Result="{x:Null}" What="{x:Null}" DelayAfter="300" DelayBefore="1000" DisplayName="GetResultQuery de precio a variable" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="GetResultQuery_2" TimeoutMS="30000" query="vPrecio = document.getElementsByClassName('price-tag-fraction')[0].innerText; return vPrecio">
+                  <local:GetResultQuery.SeleniumBrowser>
+                    <InArgument x:TypeArguments="os:IWebDriver">
+                      <mca:CSharpValue x:TypeArguments="os:IWebDriver">vNavegador</mca:CSharpValue>
+                    </InArgument>
+                  </local:GetResultQuery.SeleniumBrowser>
+                  <local:GetResultQuery.Text>
+                    <OutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">vPrecio</mca:CSharpReference>
+                    </OutArgument>
+                  </local:GetResultQuery.Text>
+                </local:GetResultQuery>
+                <Assign DisplayName="Assign en blanco." sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">vPrecio</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">vPrecio.Replace(".", string.Empty)</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">
+                      <mca:CSharpReference x:TypeArguments="x:Object">item[3]</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <mca:CSharpValue x:TypeArguments="x:Object">vPrecio</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_7">
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" xml:space="preserve">"fin busqueda  " + vProducto + " es " + vPrecio</mca:CSharpValue>
+                  </InArgument>
+                </WriteLine>
+              </Sequence>
+            </ActivityAction>
+          </ForEach>
+          <local1:WriteRange Result="{x:Null}" What="{x:Null}" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Ejemplo2" StartingCell="A1">
+            <local1:WriteRange.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <mca:CSharpValue x:TypeArguments="sd:DataTable">dtResultado</mca:CSharpValue>
+              </InArgument>
+            </local1:WriteRange.DataTable>
+            <local1:WriteRange.WorkbookPath>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">vNombreArchivo</mca:CSharpValue>
+              </InArgument>
+            </local1:WriteRange.WorkbookPath>
+          </local1:WriteRange>
+          <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_17" />
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="******fin*******  " />
+          <local3:Mail_SMTP Result="{x:Null}" What="{x:Null}" DisplayName="Mail_SMTP enviar correo" EmailBody="esto es una prueba" EmailHTMLbody="True" EmailSubject="envio adjunto" EnableSSL="True" ExceptionHandling="False" sap2010:WorkflowViewState.IdRef="Mail_SMTP_1" SMTPPortNumber="587" SMTPServer="smtp.gmail.com" SenderEmail="jamarbe05@gmail.com" SenderPassword="Colombia123456++">
+            <local3:Mail_SMTP.EmailAttachements>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">@"C:\Users\Jhon MB\Desktop\Ejercicios.xlsx"</mca:CSharpValue>
+              </InArgument>
+            </local3:Mail_SMTP.EmailAttachements>
+            <local3:Mail_SMTP.ReceiverBCC>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </local3:Mail_SMTP.ReceiverBCC>
+            <local3:Mail_SMTP.ReceiverCC>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </local3:Mail_SMTP.ReceiverCC>
+            <local3:Mail_SMTP.ReceiverTo>
+              <InArgument x:TypeArguments="x:String">
+                <mca:CSharpValue x:TypeArguments="x:String">vDestinatarios</mca:CSharpValue>
+              </InArgument>
+            </local3:Mail_SMTP.ReceiverTo>
+          </local3:Mail_SMTP>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="Correo enviado" />
+        </Sequence>
+      </State.Entry>
+    </State>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="os:IWebDriver" Name="vNavegador" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="boolExiste" />
+      <Variable x:TypeArguments="x:String" Name="vURL">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="vProducto">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtResultado">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="sd:DataTable">null</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="vPrecio">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="vNombreArchivo">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="vDestinatarios">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:String">string.Empty</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+    </StateMachine.Variables>
+    <sads:DebugSymbol.Symbol>d1VEOlx3MTFccHJ1ZWJhIGV4dGVuY2lvbmVzIGdvb2dsZVxSUEFcUHJ1ZWJhUGxhbnRpbGxhMVxQcnVlYmFQbGFudGlsbGExXFdvcmtmbG93MS54YW1sHE0D3gYSAgEBvQY1vQY8AgFvwAYLwAZVAgFmxQYLxQZVAgFdygYLygZRAgFUzwYLzwZVAgFL1AYL1AZVAgFC2QYL2QZVAgE5Twd4DwIBBHQPdIIBAgECUQtvFgIBB1INWCMCAS9ZDV8gAgEkYA1gVAIBImENZx8CARVoDW4fAgEIVRNVaAIBMFmhAVnDAQIBLlwTXGACASVgHWAnAgEjYUthUAIBIWQTZGACARhhswFh+AECARdhXWFjAgEWaEtoUAIBFGsTa2ACAQtoswFo8gECAQpoXWhjAgEJ</sads:DebugSymbol.Symbol>
+  </StateMachine>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="CreateBrowser_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_14" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_15" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222,394">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">473,9.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">237,40 267,40 267,-20.5 507.2,-20.5 507.2,9.5</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">22</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">123,9.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="ClickById_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="ClickById_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="TypeInto_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="222,580">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">123,99.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="222,456">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="155,67">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">122.5,176.5</av:Point>
+            <av:Size x:Key="ShapeSize">155,67</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">141</x:Double>
+            <x:Double x:Key="StateContainerHeight">31.079999999999984</x:Double>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_4" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="NavigateTo_4" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="Delay_4" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="GetResultQuery_1" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="210,62" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="232,434">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="155,67">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">122.5,266.5</av:Point>
+            <av:Size x:Key="ShapeSize">155,67</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">141</x:Double>
+            <x:Double x:Key="StateContainerHeight">31.079999999999984</x:Double>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_4" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="CloseBrowsser_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="222,394">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_6" sap:VirtualizedContainerService.HintSize="155,67">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">122.5,356.5</av:Point>
+            <av:Size x:Key="ShapeSize">155,67</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">141</x:Double>
+            <x:Double x:Key="StateContainerHeight">31.079999999999984</x:Double>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_7" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="222,394">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_7" sap:VirtualizedContainerService.HintSize="155,67">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">122.5,446.5</av:Point>
+            <av:Size x:Key="ShapeSize">155,67</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">141</x:Double>
+            <x:Double x:Key="StateContainerHeight">31.079999999999984</x:Double>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_8" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="NavigateTo_8" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="Delay_9" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="ClickById_3" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="ClickById_4" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="TypeInto_4" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="Delay_10" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="ElementExist_1" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="210,62" />
+      <sap2010:ViewStateData Id="Delay_11" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="SendQuery_6" sap:VirtualizedContainerService.HintSize="210,22" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="232,930">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_9" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">123,519.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ReadRange_1" sap:VirtualizedContainerService.HintSize="516,22" />
+      <sap2010:ViewStateData Id="CreateBrowser_9" sap:VirtualizedContainerService.HintSize="516,22" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="NavigateTo_9" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="264,248">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="464,398" />
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="486,522">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_5" sap:VirtualizedContainerService.HintSize="516,672" />
+      <sap2010:ViewStateData Id="Delay_12" sap:VirtualizedContainerService.HintSize="516,22" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="538,982">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_10" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">333,599.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateBrowser_10" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="NavigateTo_10" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_13" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_8" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_9" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_10" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_14" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_11" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendQuery_12" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Delay_15" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="SendKeys_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="222,766">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_11" sap:VirtualizedContainerService.HintSize="155,67">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">292.5,106.5</av:Point>
+            <av:Size x:Key="ShapeSize">155,67</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">141</x:Double>
+            <x:Double x:Key="StateContainerHeight">31.079999999999984</x:Double>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ReadRange_2" sap:VirtualizedContainerService.HintSize="494,22" />
+      <sap2010:ViewStateData Id="CreateBrowser_11" sap:VirtualizedContainerService.HintSize="494,22" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="NavigateTo_11" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="264,248">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,398" />
+      <sap2010:ViewStateData Id="ForEach`1_4" sap:VirtualizedContainerService.HintSize="494,548" />
+      <sap2010:ViewStateData Id="Delay_16" sap:VirtualizedContainerService.HintSize="494,22" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="516,858">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_12" sap:VirtualizedContainerService.HintSize="145,88">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">307.5,486</av:Point>
+            <av:Size x:Key="ShapeSize">145,88</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">131</x:Double>
+            <x:Double x:Key="StateContainerHeight">51.999999999999943</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="ReadRange_3" sap:VirtualizedContainerService.HintSize="294,22" />
+      <sap2010:ViewStateData Id="CreateBrowser_12" sap:VirtualizedContainerService.HintSize="294,22" />
+      <sap2010:ViewStateData Id="WriteLine_4" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="WriteLine_6" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="WriteLine_5" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="NavigateTo_12" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="SendQuery_13" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="GetResultQuery_2" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="WriteLine_7" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="264,984">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_7" sap:VirtualizedContainerService.HintSize="294,1134" />
+      <sap2010:ViewStateData Id="WriteRange_1" sap:VirtualizedContainerService.HintSize="294,22" />
+      <sap2010:ViewStateData Id="Delay_17" sap:VirtualizedContainerService.HintSize="294,22" />
+      <sap2010:ViewStateData Id="WriteLine_8" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="Mail_SMTP_1" sap:VirtualizedContainerService.HintSize="294,22" />
+      <sap2010:ViewStateData Id="WriteLine_9" sap:VirtualizedContainerService.HintSize="294,62" />
+      <sap2010:ViewStateData Id="Sequence_21" sap:VirtualizedContainerService.HintSize="316,2180">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_13" sap:VirtualizedContainerService.HintSize="218,70">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">53,609.5</av:Point>
+            <av:Size x:Key="ShapeSize">218,70</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">204</x:Double>
+            <x:Double x:Key="StateContainerHeight">33.999999999999943</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614,758">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">20,2.5</av:Point>
+            <x:Double x:Key="StateContainerWidth">600</x:Double>
+            <x:Double x:Key="StateContainerHeight">722</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">80,51.25 110,51.25 110,100.5 151.5,100.5 151.5,70.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PruebaPlantilla1.Workflow1_1" sap:VirtualizedContainerService.HintSize="654,838" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
